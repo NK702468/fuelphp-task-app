@@ -11,12 +11,14 @@ function TaskViewModel() {
     self.title = ko.observable("");
     self.due_date = ko.observable("");
 
+    // すべてのタスクを取得
     self.tasks = ko.observableArray(
         (window.initialTasks || []).map(function(task) {
             return new Task(task);
         })
     );
 
+    // 未完了タスクを取得
     self.incompleteTasks = ko.computed(function() {
         return self.tasks()
             .filter(function(task) {
@@ -27,12 +29,14 @@ function TaskViewModel() {
             });
     });
 
+    // 完了タスクを取得
     self.completedTasks = ko.computed(function() {
         return self.tasks().filter(function(task) {
             return task.status() === window.appConfig.statusComplete;
         });
     });
 
+    // タスク追加のfetch処理
     self.addTask = async function() {
         const response = await fetch("/tasks/create", {
             method: "POST",
@@ -55,6 +59,7 @@ function TaskViewModel() {
         }
     };
 
+    // タスク更新のfetch処理
     self.updateTask = async function(task) {
 
         const response = await fetch("/tasks/update", {
@@ -78,6 +83,7 @@ function TaskViewModel() {
         }
     };
 
+    // 完了未完了のfetch処理
     self.updateStatus = async function(task, status) {
         const response = await fetch("/tasks/update_status", {
             method: "POST",
@@ -97,6 +103,7 @@ function TaskViewModel() {
         }
     };
 
+    // タスク削除のfetch処理
     self.deleteTask = async function(task) {
         const response = await fetch("/tasks/delete", {
             method: "POST",
@@ -115,6 +122,7 @@ function TaskViewModel() {
         }
     };
 
+    // 期限間近タスクのハイライト表示
     self.isUrgentTask = function(task) {
         const now = new Date();
 

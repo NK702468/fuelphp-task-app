@@ -2,6 +2,7 @@
 
 class Controller_Tasks extends Controller
 {
+    // ログインチェック
     public function before()
     {
         parent::before();
@@ -12,6 +13,7 @@ class Controller_Tasks extends Controller
         }
     }
 
+    // タスク管理画面
     public function action_index()
     {
         Config::load('app', true);
@@ -27,6 +29,7 @@ class Controller_Tasks extends Controller
         );
     }
 
+    // タスク追加
     public function action_create()
     {
         if (Input::method() !== 'POST') {
@@ -63,6 +66,7 @@ class Controller_Tasks extends Controller
         )));
     }
 
+    // タスク更新()
     public function action_update()
     {
         if (Input::method() !== 'POST') {
@@ -92,6 +96,7 @@ class Controller_Tasks extends Controller
         )));
     }
 
+    // 完了未完了変更
     public function action_update_status()
     {
         if (Input::method() !== 'POST') {
@@ -119,6 +124,7 @@ class Controller_Tasks extends Controller
         )));
     }
 
+    // タスク削除
     public function action_delete()
     {
         if (Input::method() !== 'POST') {

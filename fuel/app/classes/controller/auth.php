@@ -2,6 +2,7 @@
 
 class Controller_Auth extends Controller
 {
+    // ユーザー登録処理
     public function action_register()
     {
         $error = '';
@@ -43,6 +44,7 @@ class Controller_Auth extends Controller
         );
     }
 
+    // ログイン処理
     public function action_login()
     {
         $error = '';

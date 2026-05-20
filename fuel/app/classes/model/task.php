@@ -2,6 +2,7 @@
 
 class Model_Task extends \Model
 {
+    // ユーザーごとに追加したタスクを表示
     public static function find_by_user_id($user_id)
     {
         return \DB::select()
@@ -12,6 +13,7 @@ class Model_Task extends \Model
             ->as_array();
     }
 
+    // タスク追加
     public static function create_task($user_id, $title, $due_date)
     {
         return \DB::insert('tasks')
@@ -24,6 +26,7 @@ class Model_Task extends \Model
             ->execute();
     }
 
+    // タスク名変更
     public static function update_task($id, $user_id, $title, $due_date)
     {
         return \DB::update('tasks')
@@ -37,6 +40,7 @@ class Model_Task extends \Model
             ->execute();
     }
 
+    // 完了未完了の変更
     public static function update_status($id, $user_id, $status)
     {
         return \DB::update('tasks')
@@ -49,6 +53,7 @@ class Model_Task extends \Model
             ->execute();
     }
 
+    // タスク削除
     public static function delete_task($id, $user_id)
     {
         return \DB::delete('tasks')
