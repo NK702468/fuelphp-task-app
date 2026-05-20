@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* タスク管理画面 */
+.task-container {
+    width: 720px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.task-container h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.task-add-box {
+    width: 640px;
+    margin: 0 auto 18px;
+    border: 2px solid #222;
+    border-radius: 14px;
+    padding: 14px 18px 16px;
+    text-align: left;
+}
+
+.task-add-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.task-add-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-add-form input {
+    height: 35px;
+    border: 2px solid #222;
+    border-radius: 7px;
+    padding: 5px 8px;
+    font-size: 14px;
+}
+
+.task-add-form input:first-child {
+    width: 220px;
+}
+
+.task-add-form input:nth-of-type(2) {
+    width: 120px;
+}
+
+.task-add-form label {
+    font-size: 18px;
+}
+
+.add-button {
+    background: #1e88e5;
+    color: #fff;
+    border: 2px solid #222;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-columns {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+
+.task-column {
+    width: 285px;
+    min-height: 380px;
+    border: 2px solid #222;
+    border-radius: 14px;
+    padding: 14px 10px;
+    text-align: left;
+}
+
+.task-column h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0 0 12px;
+}
+
+.task-card {
+    border: 2px solid #222;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 14px;
+    background: #fff;
+}
+
+.task-card.danger {
+    background: #ff6b78;
+    border-color: #ff6b78;
+}
+
+.task-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-name {
+    background: #fff;
+    border: 2px solid #222;
+    border-radius: 7px;
+    padding: 6px 28px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.complete-button {
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    padding: 10px 24px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-card p {
+    margin: 12px 0 0;
+    font-size: 14px;
+}
+
+.done-card {
+    padding: 12px 8px;
+}
+
+.done-text {
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.delete-button {
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.incomplete-button {
+    background: #ffcc33;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 9px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-name-input {
+    width: 110px;
+    height: 38px;
+    border: 2px solid #222;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 15px;
+    background: #fff;
+    outline: none;
+}
+
+.task-name-input:focus {
+    border-color: #3498db;
+}
+
+.due-date-input {
+    height: 30px;
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.due-date-input:focus {
+    border-color: #3498db;
+}
+
+.urgent-task {
+    border: 2px solid #ef4444;
+    background-color: #fef2f2;
+}

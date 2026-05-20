@@ -19,9 +19,9 @@ services:
       dockerfile: docker/db/Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: fuelphp
+      MYSQL_DATABASE: fuelphp_kadai
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - fuelphp-network
 
