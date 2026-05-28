@@ -66,6 +66,8 @@ class Controller_Auth extends Controller
             }
             else
             {
+                Session::rotate();
+                
                 Session::set('user_id', $user['id']);
                 Session::set('user_name', $user['name']);
 
